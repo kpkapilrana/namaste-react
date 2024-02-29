@@ -1,35 +1,31 @@
-/**
- * <div id="parent">
- *          <div id="child">
- *              <h1></h1>
- *              <h1></h1>
- *          </div>
- *          <div id="child">
- *              <h1></h1>
- *              <h1></h1>
- *          </div>
- * </div>
- */
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
-    "h1",
-    {id:"header"},
-    "Hello World from React JS");
+// JSX HTML like - XML like Syntax (transpiled before it reaches the JS Engine) Parcel - Babel
 
-const parent = React.createElement(
-    "div",
-    {id:"parent"},
-    [
-        React.createElement('div',{id:'child'},[
-            React.createElement("h2",{id:"header"},"Hello World from React JS"),
-            heading
-        ]),
-        React.createElement('div',{id:'child2'},[
-            heading,heading
-        ])
-    ]
+//JSX => Babel transpiled it to React.creatElement => ReactElement-JS Object => HTMLElement(render)
+
+// React Element
+const Title = (
+  <h1 className="head" tabIndex="5">
+    Namaste React 🚀
+  </h1>
 );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// React Component
+// Class Based Component - OLD
+// Functional Component - NEW
 
-root.render(parent);
+// React Functional Component
+
+const HeadingComponent = () => (
+  <div id="container">
+    {/* <Title /> */}
+    {Title}
+    <h1>Namaste React 🚀 Functional Component</h1>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeadingComponent />);
