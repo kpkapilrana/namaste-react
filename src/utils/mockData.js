@@ -1,69 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/* 
-  * Header
-    *Nav Items
-      Home
-      About Us
-      Services
-      Contact Us
-  * Body
-  * Footer
-  *   Copyright
-  *   Link
-  *   Contact
-*/
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo">
-        <img src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"></img>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Services</li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const styleCard = {
-  backgroundColor: "#f0f0f0",
-};
-const RestaurantCard = (prop) => {
-  const { resData } = prop;
-  const {
-    cloudinaryImageId,
-    name,
-    cuisines,
-    avgRating,
-    sla: { deliveryTime },
-  } = resData?.info;
-  // console.log(resData);
-  return (
-    <div className="res-card" style={styleCard}>
-      <img
-        className="res-logo"
-        alt="res-image"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      ></img>
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} Star</h4>
-      <h4>{deliveryTime} minutes</h4>
-    </div>
-  );
-};
-
 const resList = [
   {
     info: {
@@ -293,28 +227,5 @@ const resList = [
     },
   },
 ];
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="rest-container">
-        {resList.map((restaurant) => (
-          <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
 
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default resList;
