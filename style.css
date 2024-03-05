@@ -92,3 +92,24 @@
     cursor: pointer;
  }
 
+ .error-container{
+    /* display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center; */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+ }
+
+ .menu{
+        display: flex;
+        justify-content: center;
+ }
+
+ .menu div{
+    width: 500px;
+ }
+
