@@ -2,19 +2,20 @@ import { Component } from "react";
 import User from "./User";
 
 import UserClass from "./UserClass";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
   constructor(props) {
     super(props);
-    console.log("Parent Constructor Called");
+    // console.log("Parent Constructor Called");
   }
 
   componentDidMount() {
-    console.log("Parent Component Did Mount");
+    // console.log("Parent Component Did Mount");
   }
 
   componentWillUnmount() {
-    console.log("Compount Unmount Called");
+    // console.log("Compount Unmount Called");
   }
 
   render() {
@@ -22,6 +23,9 @@ class About extends Component {
     return (
       <div>
         <h1>About Page</h1>
+        <UserContext.Consumer>
+          {({ logedInUser }) => <h1 className="font-bold">{logedInUser}</h1>}
+        </UserContext.Consumer>
         {/* <User Name="Kapil" Location="Pune" Contact="kpapilrana" /> */}
         <UserClass
           Name="Kapil (Class)"

@@ -1,4 +1,8 @@
-.header{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header{
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
@@ -35,15 +39,12 @@
 .rest-container{
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between */
 }
 
 .res-card{
     margin: 5px;
     padding: 10px;
     width: 200px;
-    /* height: 300px; */
-    /* border: 1px solid black; */
 }
 .res-card:hover{
     border: 1px solid black;
@@ -93,11 +94,6 @@
  }
 
  .error-container{
-    /* display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center; */
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -112,4 +108,4 @@
  .menu div{
     width: 500px;
  }
-
+ */
