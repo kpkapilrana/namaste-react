@@ -10,14 +10,15 @@ const RestaurantCategory = ({
   //   const [isOpen, setIsOpen] = useState(false);
 
   const onExpand = () => {
-    isOpen ? reset() : setOpenIndex();
+    setOpenIndex();
+    // isOpen ? reset() : setOpenIndex();
   };
   return (
-    <div
-      className="bg-gray-50 mb-2 shadow-lg rounded-lg border border-solid border-black"
-      onClick={() => onExpand()}
-    >
-      <div className="flex justify-between  mx-auto p-2">
+    <div className="bg-gray-50 mb-2 shadow-lg rounded-lg border border-solid border-black">
+      <div
+        className="flex justify-between  mx-auto p-2"
+        onClick={() => onExpand()}
+      >
         <h1 className="px-4 font-bold text-lg">
           {title} ({itemCards.length})
         </h1>

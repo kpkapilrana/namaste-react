@@ -1,10 +1,21 @@
+import { useDispatch } from "react-redux";
 import { MENU_IMG_URL } from "../utils/constant";
+import { addItem } from "../utils/cartSlice";
 const ItemCards = ({ cards }) => {
+  const dispatch = useDispatch();
+
+  const onAdd = (item) => {
+    // const {ca}=item
+    // console.log("Added");
+    // Dispatch Action
+    dispatch(addItem(item));
+  };
   return (
     <>
       {cards.map((item) => {
         return (
           <div
+            data-testid="catCard"
             key={item?.card?.info?.id}
             className="flex p-2 justify-between pl-8 mx-4 mb-2 border-gray-300 border-b-2"
           >
@@ -28,7 +39,12 @@ const ItemCards = ({ cards }) => {
                 src={MENU_IMG_URL + item?.card?.info?.imageId}
               ></img>
 
-              <button className="absolute bottom-2 bg-white text-green-500 uppercase text-md px-4 mx-2 shadow-md rounded-md border border-solid border-gray-400">
+              <button
+                className="absolute bottom-2 bg-white text-green-500 uppercase text-md px-4 mx-2 shadow-md rounded-md border border-solid border-gray-400"
+                onClick={() => {
+                  onAdd(item);
+                }}
+              >
                 Add
               </button>
             </div>

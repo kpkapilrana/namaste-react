@@ -25,9 +25,9 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.8676658&lng=75.3827335&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await response.json();
-    console.log(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    // console.log(
+    //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
     setListOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -35,13 +35,13 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-  onClick = () => {
-    // e, preventDefault();
-    const filterList = listOfRestaurants.filter(
-      (el) => el.info.avgRating > 4.2
-    );
-    setFilteredRestaurants(filterList);
-  };
+  // onClick = () => {
+  //   // e, preventDefault();
+  //   const filterList = listOfRestaurants.filter(
+  //     (el) => el.info.avgRating > 4.2
+  //   );
+  //   setFilteredRestaurants(filterList);
+  // };
 
   //Conditional Rendering
   const onlineStatus = useOnlineStatus();
@@ -58,6 +58,8 @@ const Body = () => {
         <div className="search p-1 m-1">
           <input
             type="text"
+            name="search"
+            data-testid="searchInput"
             className="border border-solid border-black p-2"
             value={searchValue}
             onChange={(e) => {
@@ -81,7 +83,10 @@ const Body = () => {
           <button
             className="ring-4 border border-solid border-black rounded-lg px-4 py-2"
             onClick={() => {
-              onClick();
+              const filterList = listOfRestaurants.filter(
+                (el) => el.info.avgRating > 4.2
+              );
+              setFilteredRestaurants(filterList);
             }}
           >
             Top Rated Restaurant

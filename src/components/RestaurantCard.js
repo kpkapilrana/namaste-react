@@ -16,7 +16,10 @@ const RestaurantCard = (prop) => {
   } = resData?.info;
   // console.log(resData);
   return (
-    <div className="m-4 p-4 w-[200] bg-gray-200 shadow-lg rounded-lg">
+    <div
+      data-testid="resCard"
+      className="m-4 p-4 w-[200] bg-gray-200 shadow-lg rounded-lg"
+    >
       <img
         className="w-44 h-40 rounded-md"
         alt="res-image"

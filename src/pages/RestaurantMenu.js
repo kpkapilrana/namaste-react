@@ -37,7 +37,7 @@ const RestaurantMenu = () => {
             itemCards={card?.card?.card?.itemCards}
             isOpen={i === openIndex ? true : false}
             setOpenIndex={() => setOpenIndex(i)}
-            reset={() => setOpenIndex(null)}
+            // reset={() => setOpenIndex(null)}
           />
         ))}
       </div>

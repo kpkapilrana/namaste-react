@@ -55,3 +55,31 @@ import {Component} from "path";
 
 Client Side Routing
 Server Side Routing
+
+# REDUX
+
+- Install @reduxjs/toolit and react-redux
+- Build out Store
+- Connect out Store to our app
+- Create Cart Slice
+- Dispatch Action
+- Selector
+
+# Types of testing Developer Do
+
+- Unit Testing
+- Integration Testing
+- End to End Testing
+
+# Setting Up Testing in React
+
+- install React testing Library
+- Installed Jest
+- Installed Babel Dependency
+- Configure Babel
+- Configure Parcel Config File to disable babel transpilation
+- Jest Configuration - npx jest --init
+- Install jsdom library
+- Install @babel/preset-react - to mae JSX work in test cases
+- Include @babel/preset-react inside my babel
+- Install @testing-library/jest-dom
